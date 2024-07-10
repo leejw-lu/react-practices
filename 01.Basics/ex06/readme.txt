@@ -6,8 +6,8 @@ React API 기반에서 JSX 기반의 Application으로 리팩토링 하기
 == [실습] ===============================================
 
 <1> Init Project
-$ mkdir ex05
-$ cd ex05
+$ mkdir ex06
+$ cd ex06
 $ npm init -y 
 
 
