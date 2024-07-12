@@ -5,7 +5,7 @@ function App() {
     return (
         <div id={'App'}>
             <MyComponent
-                props02={20}
+                //props02={20}
                 props03={true} 
                 props04={{no:1, name:'둘리'}}
                 props05={['javascript', 'react', 'es6']}
