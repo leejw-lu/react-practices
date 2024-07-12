@@ -32,7 +32,9 @@ body {
 	margin: 100px auto;
 }
 
-.tab-box ul {
+/*tabbox는 global로 해도 OK*/
+
+.tab-box ul { 
 	height: 24px;
 }
 
