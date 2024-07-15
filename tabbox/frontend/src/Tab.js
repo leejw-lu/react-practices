@@ -1,21 +1,17 @@
 import React from 'react';
 import {Tab_} from './assets/scss/Tab.scss';
 
-function Tab({name, active}) {
+function Tab({idx, name, active, selectTab}) {
 
-    if (active) { //true
-        return (
-            <li className={[Tab_, 'active'].join(' ')}>{name}</li>
-        );
-    } else {
-        return (
-            <li className={Tab_}>{name}</li>
-        );
-    }
-
-    // return (
-    //     <li className={[Tab_, (active ? 'active' : '')].join(' ')}>{name}</li>
-    // );
+    //console.log(idx);
+    return (
+        <li 
+            className={[Tab_, (active ? 'active' : '')].join(' ')}
+            onClick={() => {
+                selectTab(idx);
+            }}
+            >{name}</li>
+    );
 }
 
 export default Tab;
