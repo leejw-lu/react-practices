@@ -6,6 +6,6 @@
     &:before      { display: inline-block; width: 1em; content: '▸'; }
 }
 
-.Card_Title_Open{
+:global(.Card_Title_Open){
     &:before { content: '▾'; }
 }
