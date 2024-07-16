@@ -27,7 +27,7 @@ export default function App() {
             </Modal>
 
 
-            {/* example modal02: Using onRequestClose */}
+            {/* example modal02: Using onRequestClose: modal 밖 클릭하면 창 없어짐 */}
             <button onClick={() => setModal02IsOpen(true)}>modal02</button>
             <br/><br/>
             <Modal
@@ -56,7 +56,7 @@ export default function App() {
             </Modal>
 
 
-            {/* example modal04: Using inline styles */}
+            {/* example modal04: Using CSS/SASS styles */}
             <button onClick={() => setModal04IsOpen(true)}>modal04</button>
             <br/><br/>
             <Modal
