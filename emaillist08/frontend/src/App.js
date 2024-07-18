@@ -7,6 +7,36 @@ import './assets/scss/App.scss';
 function App() {
     const [emails, setEmails] = useState(null);
 
+    
+    const deleteEmail = async (no) => {
+        try{
+            const response= await fetch(`/api/${no}` , {
+                method: 'delete',
+                headers: {
+                    'Accept' : 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(no)
+            });
+
+            if(!response.ok) {
+                throw new Error(`${response.status} ${response.statusText}`);
+            }
+
+            const json = await response.json();
+
+            if(json.result !== 'success'){
+                throw new Error(json.message);
+            }
+
+            setEmails(emails.filter((e) => e.no !==no));
+            //fetchEmails('');
+
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
     const addEmail= async (email) => {
         try{
             const response= await fetch('/api' , {
@@ -50,7 +80,7 @@ function App() {
             }
 
             const json = await response.json();
-            
+
             if(json.result !== 'success') {
                 throw new Error(json.message);
             }
@@ -62,8 +92,7 @@ function App() {
         }
     }
 
-
-    useEffect(()=> {
+    useEffect(()=> {    //mount, unmount될 때
         fetchEmails();
     }, []);
 
@@ -71,7 +100,7 @@ function App() {
         <div id={'App'} >
             <RegisterForm addEmail={addEmail} />
             <Searchbar fetchEmails={fetchEmails}/>
-            <Emaillist emails={emails}/>
+            <Emaillist emails={emails} deleteEmail={deleteEmail}/>
         </div>
     );
 }
