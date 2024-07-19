@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {SiteLayout} from "../../layout";
 
 export default function Settings() {

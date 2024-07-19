@@ -17,7 +17,7 @@ export default function Main() {
                         <Link to={'/gallery'}>[Gallery]</Link> 
                     </li>
                 </ul>
-        }
+            }
         </div>
     );
 }
