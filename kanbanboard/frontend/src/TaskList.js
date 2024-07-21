@@ -2,13 +2,13 @@ import React, {useRef} from 'react';
 import Task from './Task';
 import {Task_List, Input_Add_Task} from './assets/scss/TaskList.scss';
 
-function TaskList({no, tasks, addTask}) {   //cardNo
+function TaskList({no, tasks, addTask, updateTask, deleteTask}) {   //no=cardNo
     const inputRef = useRef(null);   //input enter하고 남은 기록 없애주기
 
     return (
         <div className={Task_List}>
             <ul>
-                {tasks.map(e=> <Task key={e.no} no={e.no} name={e.name} done={e.done} />) }
+                {tasks.map((e)=> <Task key={e.no} no={e.no} name={e.name} done={e.done} updateTask={updateTask} deleteTask={deleteTask}/>) }
             </ul>
             <input
                 ref={inputRef} 
